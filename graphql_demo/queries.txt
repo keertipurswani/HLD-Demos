@@ -1,0 +1,79 @@
+//example queries for graphql
+
+
+-create department
+mutation {
+  createDepartment(id: "1", name: "Computer Science", hod: "Dr. Smith") {
+    id
+    name
+    hod
+  }
+}
+
+
+-create student and associate with department : 
+mutation {
+  createStudent(id: "1", name: "John Doe", age: 20, address: "123 Main St", department: "1") {
+    id
+    name
+    age
+    address
+    department {
+      id
+      name
+      hod
+    }
+  }
+}
+
+
+-retrieve student by id : 
+{
+  student(id: "1") {
+    id
+    name
+    age
+    address
+    department {
+      id
+      name
+      hod
+    }
+  }
+}
+
+-retrieve all students :
+{
+  students {
+    id
+    name
+    age
+    address
+    department {
+      id
+      name
+      hod
+    }
+  }
+}
+
+-retrieve department by id : 
+
+{
+  department(id: "1") {
+    id
+    name
+    hod
+  }
+}
+
+
+-retrieve all departments : 
+{
+  departments {
+    id
+    name
+    hod
+  }
+}
+
